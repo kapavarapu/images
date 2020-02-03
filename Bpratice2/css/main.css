@@ -1,0 +1,240 @@
+ @import url('https://fonts.googleapis.com/css?family=Zhi+Mang+Xing&display=swap');
+
+  [class*="col"] {
+    margin-bottom: 2px;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    margin-top: 10px;
+}
+
+.page-header {
+	font-family: 'Zhi Mang Xing', cursive;
+	font-size: 2.5em;
+}
+
+.collapse {
+	background-color: red;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  padding: 4% 2%;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.tig1 {
+  flex: 1;
+  overflow: hidden;
+  transition: .5s;
+  margin: 0 2%;
+  box-shadow: 0 20px 30px rgba(0,0,0,.1);
+  line-height: 0;
+}
+
+.tig1 > img, .tig11 > img {
+  width: 200%;
+  height: calc(100% - 10vh);
+  object-fit: cover; 
+  transition: .5s;
+}
+
+.tig1 > span, .tig11 > span {
+  font-size: 3.8vh;
+  display: block;
+  text-align: center;
+  height: 10vh;
+  line-height: 2.6;
+}
+
+.tig1:hover, .tig11:hover {
+ flex: 1 1 50%; 
+}
+.tig1:hover > img, .tig11:hover > img {
+  width: 100%;
+  height: 100%;
+}
+
+.tig2 figure img, .tig12 figure img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+	z-index: 99;
+}
+.tig2 figure:hover img, .tig12 figure:hover img {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.tig3 figure img, .tig13 figure img {
+	/* width: 300px; */
+	height: auto;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.tig3 figure:hover img, .tig13 figure:hover img {
+	width: 350px;
+}
+
+.tig4 figure img, .tig14 figure img {
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.tig4 figure:hover img, .tig14 figure:hover img {
+	-webkit-filter: blur(0);
+	filter: blur(0);
+}
+
+
+.tig5 figure img, .tig15 figure img {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.tig5 figure:hover img, .tig5 figure:hover img {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+
+
+/* Blur + Gray Scale */
+.tig6 figure img, .tig16 figure img {
+	-webkit-filter: grayscale(0) blur(0);
+	filter: grayscale(0) blur(0);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.tig6 figure:hover img, .tig16 figure:hover img {
+	-webkit-filter: grayscale(100%) blur(3px);
+	filter: grayscale(100%) blur(3px);
+}
+
+.tig7 figure, .tig17 figure {
+	background: #1abc9c;
+}
+.tig7 figure img, .tig17 figure img {
+	opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.tig7 figure:hover img, .tig17 figure:hover img {
+	opacity: .5;
+}
+
+
+
+/* Flashing */
+.tig8 figure:hover img, .tig18 figure:hover img {
+	opacity: 1;
+	-webkit-animation: flash 1.5s;
+	animation: flash 1.5s;
+}
+@-webkit-keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/* Shine */
+.tig9 figure, .tig19 figure {
+	position: relative;
+}
+.tig9 figure::before, .tig19 figure::before {
+	position: absolute;
+	top: 0;
+	left: -75%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 50%;
+	height: 100%;
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	-webkit-transform: skewX(-25deg);
+	transform: skewX(-25deg);
+}
+.tig9 figure:hover::before, .tig19 figure:hover::before {
+	-webkit-animation: shine .75s;
+	animation: shine .75s;
+}
+@-webkit-keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+@keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+
+/* Circle */
+.tig10 figure, .tig20 figure {
+	position: relative;
+}
+.tig10 figure::before, .tig20 figure::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 0;
+	height: 0;
+	background: rgba(255,255,255,.2);
+	border-radius: 100%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	opacity: 0;
+}
+.tig10 figure:hover::before, .tig10 figure:hover::before {
+	-webkit-animation: circle .75s;
+	animation: circle .75s;
+}
+@-webkit-keyframes circle {
+	0% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 1;
+	}
+	100% {
+		width: 200%;
+		height: 200%;
+		opacity: 0;
+	}
+}
+@keyframes circle {
+	0% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 1;
+	}
+	100% {
+		width: 200%;
+		height: 200%;
+		opacity: 0;
+	}
+}
